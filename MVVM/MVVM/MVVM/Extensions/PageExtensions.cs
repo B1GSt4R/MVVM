@@ -7,9 +7,9 @@ namespace MVVM
 {
   public static class PageExtensions
   {
-    public static IBaseViewModel<TPage> GetViewModel<TPage>(this Page page) where TPage : Page
+    public static IBaseViewModel GetViewModel(this Page page)
     {
-      return null;
+      return page.BindingContext as IBaseViewModel ?? default;
     }
   }
 }

@@ -40,6 +40,9 @@ namespace MVVM
     private void OnChange(object obj)
     {
       Data.TestTitle = Input;
+      var tmp1 = Data.ToJson();
+      var tmp2 = Data.FromJson<Main_DM>(tmp1);
+      var tmp3 = Page.GetViewModel();
     }
 
     private bool CanChange(object arg)
