@@ -23,5 +23,7 @@
 - `await new Home_VM().ShowAsync();`
 
 ## Versionsverlauf
- Version 1.0:
+#### Version 1.0.0 (02.01.2022):
 - Basis Framework
+#### Version 1.0.1 (03.01.2022):
+- DependsOn Attribute

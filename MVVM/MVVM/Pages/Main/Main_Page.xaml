@@ -10,9 +10,10 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="{Binding Title}"/>
-        <Label Text="{Binding Data.TestTitle}"/>
         <Entry Text="{Binding Input}" Placeholder="Input"/>
+        <Label Text="{Binding TestInput}"/>
+        <Entry Text="{Binding Data.TestTitle}" Placeholder="Input"/>
+        <Label Text="{Binding Test}"/>
         <Button Command="{Binding CM_Change}" Text="Update"/>
         <Button Command="{Binding CM_OpenHome}" Text="Open Home Page"/>
         <Button Command="{Binding CM_Back}" Text="Zurück"/>

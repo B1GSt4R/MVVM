@@ -16,5 +16,11 @@ namespace MVVM
     {
       return JsonConvert.SerializeObject(this);
     }
+
+    public T Clone<T>()
+    {
+      if (Object.ReferenceEquals(this, null)) return default(T);
+      return (T)this.MemberwiseClone();
+    }
   }
 }

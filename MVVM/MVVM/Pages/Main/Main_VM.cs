@@ -20,6 +20,13 @@ namespace MVVM
     public string Input { get => _Input; set => SP(ref _Input, value); }
     private string _Input;
 
+    [DependsOn(nameof(Input))]
+    public string TestInput => Input;
+
+
+    [DependsOn(nameof(Main_DM.TestTitle), nameof(Data))]
+    public string Test => Data.TestTitle;
+
     public Main_VM()
     {
       Title = "Main";
