@@ -16,7 +16,8 @@ Jede Page benötigt ein ViewModel
 4. In der Android MainActivity.cs folgende Zeile hinzufügen in die OnCreate Methode `StatusColor.Init(this);`
 5. Im Hauptprojekt zu jeder Page ein ViewModel anlegen welches vom BaseViewModel erbt und als Generic Parameter die Page bekommt. 
    Beispiel: `public class Main_VM : BaseViewModel<Main_Page>`
-6. In der App.xaml.cs die MainPage zuweisung gegen das Main_VM ersetzten und die Methode MainPage aufrufen. Beispiel: `MainPage = new Main_VM().MainPage();`
+6. In der App.xaml.cs die MainPage zuweisung gegen das Main_VM ersetzten und die Methode MainPage aufrufen. 
+   Beispiel: `MainPage = new Main_VM().MainPage();`
 
 ### Navigieren innerhalb der App
 - `await new Home_VM().ShowAsync();`
