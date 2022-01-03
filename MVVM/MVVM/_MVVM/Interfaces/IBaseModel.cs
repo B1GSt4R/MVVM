@@ -8,6 +8,6 @@ namespace MVVM
 {
   public interface IBaseModel
   {
-    void OnPropertyChanged([CallerMemberName] string propertyName);
+    void OnPropertyChanged(string propertyName);
   }
 }
