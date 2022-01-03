@@ -7,11 +7,6 @@ namespace MVVM
 {
   public class BaseViewModel<TPage> : BaseModel, IBaseViewModel<TPage> where TPage : Page, new()
   {
-    #region Commands
-    public ICommand CM_Back { get => _CM_Back ?? (_CM_Back = new Command(OnBack, CanBack)); }
-    private Command _CM_Back;
-    #endregion
-
     #region Properties
     public string Title { get => _Title; set => SP(ref _Title, value); }
     private string _Title;
@@ -21,35 +16,87 @@ namespace MVVM
     public TPage Page { get; private set; }
     #endregion
 
-    #region Command Tasks
-    private async void OnBack(object obj)
+    #region Back Command
+    public ICommand CM_Back { get => _CM_Back ?? (_CM_Back = new Command(OnBack, CanBack)); }
+    private Command _CM_Back;
+
+    public virtual async void OnBack(object obj)
     {
       await BackAsync();
     }
 
-    private bool CanBack(object arg)
+    public virtual bool CanBack(object arg)
     {
       return true;
+    }
+
+    public async Task BackAsync()
+    {
+      MVVMConfig.Stats.IsGoingBack = true;
+      await Services.Navigation.GoBackAsync(IsModal);
+      MVVMConfig.Stats.IsGoingBack = false;
+    }
+    #endregion
+
+    #region BackHome Command
+    public ICommand CM_BackHome { get => _CM_BackHome ?? (_CM_BackHome = new Command(OnBackHome, CanBackHome)); }
+    private Command _CM_BackHome;
+
+    public virtual async void OnBackHome(object obj)
+    {
+      await BackHomeAsync();
+    }
+
+    public virtual bool CanBackHome(object arg)
+    {
+      return true;
+    }
+
+    public async Task BackHomeAsync()
+    {
+      throw new NotImplementedException();
+      //await BackAsync();
+    }
+    #endregion
+
+    #region Logout Command
+    public ICommand CM_Logout { get => _CM_Logout ?? (_CM_Logout = new Command(OnLogout, CanLogout)); }
+    private Command _CM_Logout;
+
+    public virtual async void OnLogout(object obj)
+    {
+      await LogoutAsync();
+    }
+
+    public virtual bool CanLogout(object arg)
+    {
+      return true;
+    }
+
+    public async Task LogoutAsync()
+    {
+      //await BackAsync();
+      throw new NotImplementedException();
     }
     #endregion
 
     #region Appearing & Disappearing
     private void DoDisappearing(object sender, EventArgs e)
     {
-      OnDisappearing();
+      OnDisappearing(MVVMConfig.Stats.IsGoingBack);
     }
 
     private void DoAppearing(object sender, EventArgs e)
     {
-      OnAppearing();
+      OnAppearing(MVVMConfig.Stats.IsGoingBack);
     }
 
-    public virtual void OnAppearing()
+    public virtual void OnAppearing(bool isGoingBack)
     {
 
     }
 
-    public virtual void OnDisappearing()
+    public virtual void OnDisappearing(bool isGoingBack)
     {
 
     }
@@ -77,11 +124,11 @@ namespace MVVM
       Page.BindingContext = this;
       await Services.Navigation.GoToAsync(Page, (IsModal = isModal));
     }
-
-    public async Task BackAsync()
-    {
-      await Services.Navigation.GoBackAsync(IsModal);
-    }
     #endregion
+  }
+
+  public class BaseViewModel : BaseViewModel<ContentPage>
+  {
+
   }
 }

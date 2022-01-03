@@ -27,3 +27,7 @@
 - Basis Framework
 #### Version 1.0.1 (03.01.2022):
 - DependsOn Attribute
+- JsonContent für HttpClient Post Header
+- Logout Command
+- BackHome Command
+- MVVM Config und Stats
