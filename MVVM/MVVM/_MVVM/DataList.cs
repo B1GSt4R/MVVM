@@ -9,7 +9,7 @@ namespace MVVM
   /// Used for Data Types like int, bool, ...
   /// </summary>
   /// <typeparam name="TModel">class</typeparam>
-  public class DataList<TModel> : ObservableCollection<TModel>
+  public class DataList<T> : ObservableCollection<T>
   {
 
   }

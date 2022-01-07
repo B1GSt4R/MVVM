@@ -14,6 +14,48 @@
             <Button Command="{Binding CM_OpenSettings}" CommandParameter="false" Text="Open Settings Page"/>
             <Button Command="{Binding CM_OpenSettings}" CommandParameter="true" Text="Open Settings Page Modal"/>
             <Button Command="{Binding CM_Back}" Text="Zurück"/>
+            <CollectionView ItemsSource="{Binding SimpleList}">
+                <!--<CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding}" TextColor="DarkRed" FontSize="15"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>-->
+            </CollectionView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Id" Text="{Binding Id}" HorizontalOptions="FillAndExpand"/>
+                    <Entry Placeholder="Content" Text="{Binding Content}" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Add" Command="{Binding CM_Add}" CommandParameter="false"/>
+                    <Button Text="Edit" Command="{Binding CM_Edit}" CommandParameter="false"/>
+                    <Button Text="Del" Command="{Binding CM_Del}" CommandParameter="false"/>
+                </StackLayout>
+            </StackLayout>
+            <CollectionView ItemsSource="{Binding ComplexList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="p:Home_DM">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Vorname}" TextColor="Black" FontSize="15"/>
+                            <Label Text="{Binding Name}" TextColor="Black" FontSize="15"/>
+                            <Label Text="{Binding Mix}" TextColor="Black" FontSize="15"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Id" Text="{Binding Id}" HorizontalOptions="FillAndExpand"/>
+                    <Entry Placeholder="Content" Text="{Binding Content}" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Add" Command="{Binding CM_Add}" CommandParameter="true"/>
+                    <Button Text="Edit" Command="{Binding CM_Edit}" CommandParameter="true"/>
+                    <Button Text="Del" Command="{Binding CM_Del}" CommandParameter="true"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
