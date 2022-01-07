@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -15,12 +16,13 @@ namespace MVVM
       CheckProperties(propertyName);
     }
 
-    protected bool SP<T>(ref T field, T data, [CallerMemberName] string propertyName = "")
+    protected bool SP<T>(ref T field, T data, Action onAction = null, [CallerMemberName] string propertyName = "")
     {
       if (!Equals(field, data))
       {
         field = data;
         OnPropertyChanged(propertyName);
+        if (onAction != null) onAction();
         return true;
       }
       return false;
