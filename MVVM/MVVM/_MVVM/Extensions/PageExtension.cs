@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace MVVM
 {
-  public static class PageExtensions
+  public static partial class PageExtension
   {
     public static IBaseViewModel GetViewModel(this Page page)
     {

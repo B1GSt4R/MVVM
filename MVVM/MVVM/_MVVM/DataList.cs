@@ -11,7 +11,9 @@ namespace MVVM
   /// <typeparam name="T">class</typeparam>
   public class DataList<T> : ObservableCollection<T>
   {
-
+    public DataList() : base() { }
+    public DataList(IEnumerable<T> data) : base(data) { }
+    public DataList(IList<T> data) : base(data) { }
   }
 
   /// <summary>
@@ -20,6 +22,8 @@ namespace MVVM
   /// <typeparam name="TModel">User_DM</typeparam>
   public class BigDataList<TModel> : DataList<TModel> where TModel : IBaseDataModel
   {
-
+    public BigDataList() : base() { }
+    public BigDataList(IEnumerable<TModel> data) : base(data) { }
+    public BigDataList(IList<TModel> data) : base(data) { }
   }
 }
