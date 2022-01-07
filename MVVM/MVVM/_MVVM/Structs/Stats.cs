@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MVVM.Structs
+﻿namespace MVVM.Structs
 {
   public struct Stats
   {

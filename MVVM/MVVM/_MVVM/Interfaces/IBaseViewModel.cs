@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -13,7 +10,7 @@ namespace MVVM
     string Title { get; set; }
     bool IsModal { get; set; }
 
-    bool IsStartPage { get;}
+    bool IsStartPage { get; }
     bool IsLoginPage { get; set; }
     bool IsHomePage { get; set; }
     #endregion
