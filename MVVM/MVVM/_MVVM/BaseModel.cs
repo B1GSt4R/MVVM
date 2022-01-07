@@ -22,7 +22,7 @@ namespace MVVM
       {
         field = data;
         OnPropertyChanged(propertyName);
-        if (onAction != null) onAction();
+        onAction?.Invoke();
         return true;
       }
       return false;
