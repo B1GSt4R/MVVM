@@ -14,6 +14,10 @@ namespace MVVM
     public bool IsModal { get; set; }
 
     public TPage Page { get; private set; }
+
+    public bool IsStartPage { get; private set; }
+    public bool IsLoginPage { get; set; }
+    public bool IsHomePage { get; set; }
     #endregion
 
     #region Back Command
@@ -111,9 +115,10 @@ namespace MVVM
       Page.Disappearing += DoDisappearing;
     }
 
-    public Page MainPage()
+    public Page StartPage()
     {
       InitPage<TPage>();
+      this.IsStartPage = true;
       Page.BindingContext = this;
       return new NavigationPage(Page);
     }

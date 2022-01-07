@@ -10,7 +10,7 @@ namespace MVVM
     {
       InitializeComponent();
 
-      MainPage = new Main_VM().MainPage();
+      MainPage = new Main_VM().StartPage();
     }
 
     protected override void OnStart()

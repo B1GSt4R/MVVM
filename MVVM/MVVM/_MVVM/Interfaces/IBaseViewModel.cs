@@ -7,12 +7,15 @@ using Xamarin.Forms;
 
 namespace MVVM
 {
-  public interface IBaseViewModel<TPage> where TPage : Page
+  public interface IBaseViewModel
   {
     #region Properties
     string Title { get; set; }
     bool IsModal { get; set; }
-    TPage Page { get; }
+
+    bool IsStartPage { get;}
+    bool IsLoginPage { get; set; }
+    bool IsHomePage { get; set; }
     #endregion
 
     #region Back Command
@@ -42,10 +45,13 @@ namespace MVVM
     #endregion
 
     #region Navigation
-    Page MainPage();
+    Page StartPage();
     Task ShowAsync(bool isModal = false);
     #endregion
   }
 
-  public interface IBaseViewModel { }
+  public interface IBaseViewModel<TPage> : IBaseViewModel where TPage : Page
+  {
+    TPage Page { get; }
+  }
 }
