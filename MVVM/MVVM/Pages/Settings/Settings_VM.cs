@@ -13,7 +13,7 @@ namespace MVVM
       this.Modal = modal;
     }
 
-    public override void OnAppearing()
+    public override void OnAppearing(bool isGoingBack)
     {
       Title = "Settings";
     }

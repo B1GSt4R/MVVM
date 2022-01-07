@@ -34,7 +34,7 @@ namespace MVVM
       Data.TestTitle = "MVVM";
     }
 
-    public override void OnAppearing()
+    public override void OnAppearing(bool isGoingBack)
     {
       Data.TestTitle = "Dominic";
     }

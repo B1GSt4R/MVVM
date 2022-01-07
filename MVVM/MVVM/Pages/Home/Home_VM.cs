@@ -10,7 +10,7 @@ namespace MVVM
   {
     public ICommand CM_OpenSettings { get => _CM_OpenSettings ?? (_CM_OpenSettings = new Command(OnOpenSettings)); }
     private Command _CM_OpenSettings;
-    public override void OnAppearing()
+    public override void OnAppearing(bool isGoingBack)
     {
       Title = "Home";
     }
