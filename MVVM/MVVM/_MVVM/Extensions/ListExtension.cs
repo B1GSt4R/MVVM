@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MVVM._MVVM.Extensions
+namespace MVVM
 {
   public static partial class ListExtension
   {

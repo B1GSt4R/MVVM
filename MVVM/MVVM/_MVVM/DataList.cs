@@ -9,11 +9,15 @@ namespace MVVM
   /// Used for Data Types like int, bool, ...
   /// </summary>
   /// <typeparam name="T">class</typeparam>
-  public class DataList<T> : ObservableCollection<T>
+  public class DataList<T> : ObservableCollection<T>, IDataList<T>
   {
     public DataList() : base() { }
     public DataList(IEnumerable<T> data) : base(data) { }
     public DataList(IList<T> data) : base(data) { }
+
+    public T Find(Predicate<T> predicate) => (this.ToList() as List<T>).Find(predicate);
+    public IDataList<T> FindAll(Predicate<T> predicate) => (this.ToList() as List<T>).FindAll(predicate).ToDataList();
+    public int FindIndex(Predicate<T> predicate) => (this.ToList() as List<T>).FindIndex(predicate);
   }
 
   /// <summary>
