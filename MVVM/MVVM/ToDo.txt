@@ -1,0 +1,5 @@
+﻿- baseviewmodel mit übergabe von 3 pages anstelle nur einer (optional)
+- ein navigation stack in welchem modals und normale pages zusammen liegen neben den beiden einzelen stacks
+- custom page template
+- custom popups
+- custom spinner
