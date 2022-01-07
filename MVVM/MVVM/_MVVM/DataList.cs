@@ -8,7 +8,7 @@ namespace MVVM
   /// <summary>
   /// Used for Data Types like int, bool, ...
   /// </summary>
-  /// <typeparam name="TModel">class</typeparam>
+  /// <typeparam name="T">class</typeparam>
   public class DataList<T> : ObservableCollection<T>
   {
 
