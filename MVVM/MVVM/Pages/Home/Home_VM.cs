@@ -32,7 +32,7 @@ namespace MVVM
     {
       new Home_DM { Name = "Element", Vorname = "First" }
     };
-    
+
     public override void OnAppearing(bool isGoingBack)
     {
       Title = "Home";
