@@ -37,6 +37,16 @@ namespace MVVM
     public override void OnAppearing(bool isGoingBack)
     {
       Data.TestTitle = "Dominic";
+
+      // Rest API Test
+      test();
+      // End Rest API Test
+    }
+
+    public async void test()
+    {
+      var x = await Services.Api.SendAsync<Main_DM>(HttpRequestMethod.GET, "artikel");
+      var y = await Services.AuthApi.SendAsync<Main_DM>(HttpRequestMethod.POST, "login");
     }
 
     private async void OnOpenHome(object obj)
