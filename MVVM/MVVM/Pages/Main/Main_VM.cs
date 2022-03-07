@@ -39,7 +39,7 @@ namespace MVVM
       Data.TestTitle = "Dominic";
 
       // Rest API Test
-      test();
+      //test();
       // End Rest API Test
     }
 

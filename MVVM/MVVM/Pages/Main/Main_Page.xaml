@@ -17,6 +17,102 @@
         <Button Command="{Binding CM_Change}" Text="Update"/>
         <Button Command="{Binding CM_OpenHome}" Text="Open Home Page"/>
         <Button Command="{Binding CM_Back}" Text="Zurück"/>
+
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="5" CornerRadius="20">
+                    <StackLayout Padding="10">
+                        <StackLayout>
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Campus-Swipe!" TextColor="#ffffff"/>
+                        </StackLayout>
+                        <BoxView HeightRequest="3" BackgroundColor="Orange" Margin="2"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="7.5">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Lime"/>
+                        <StackLayout Padding="10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="0">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Padding="10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Purple"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="0">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Purple"/>
+                        <StackLayout Padding="10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Purple"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="10">
+                    <StackLayout Orientation="Vertical">
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Cyan"/>
+                        <StackLayout Padding="10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="0">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Padding="10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Crimson"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="0">
+                    <StackLayout Orientation="Vertical">
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Crimson"/>
+                        <StackLayout Padding="10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                        <BoxView HeightRequest="5" WidthRequest="5" BackgroundColor="Crimson"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="0">
+                    <StackLayout Orientation="Horizontal">
+                        <Polygon Points="35,0 0,0 0,35" Fill="RoyalBlue"/>
+                        <StackLayout Padding="-20, 15, 10, 10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="0">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Padding="10, 15, 0, 10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                        <BoxView BackgroundColor="YellowGreen" Margin="10, -40, 10, 0" HeightRequest="50" WidthRequest="20" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="#8A8A8A" Margin="15" Padding="0" CornerRadius="0">
+                    <StackLayout Orientation="Horizontal">
+                        <BoxView BackgroundColor="YellowGreen" Margin="10, -40, 10, 0" HeightRequest="50" WidthRequest="20" VerticalOptions="CenterAndExpand"/>
+                        <StackLayout Padding="0, 15, 10, 10">
+                            <Label Text="Hier ist ein Fehler aufgetreten. Und das auch noch in Orderdent!" TextColor="#ffffff"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>
