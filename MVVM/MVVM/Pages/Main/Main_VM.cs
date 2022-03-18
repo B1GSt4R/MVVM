@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MVVM
@@ -17,8 +18,13 @@ namespace MVVM
     public ICommand CM_Change { get => _CM_Change ?? (_CM_Change = new Command(OnChange, CanChange)); }
     private Command _CM_Change;
 
+    [DependsOn(nameof(Author))]
+    public ICommand CM_OpenChat { get => new Command(OnOpenChat, CanOpenChat); }
+
     public string Input { get => _Input; set => SP(ref _Input, value); }
     private string _Input;
+    public string Author { get => _Author; set => SP(ref _Author, value, () => Preferences.Set(nameof(Author), value)); }
+    private string _Author = string.Empty;
 
     [DependsOn(nameof(Input))]
     public string TestInput => Input;
@@ -38,6 +44,8 @@ namespace MVVM
     {
       Data.TestTitle = "Dominic";
 
+      Author = Preferences.Get(nameof(Author), string.Empty);
+
       // Rest API Test
       //test();
       // End Rest API Test
@@ -52,6 +60,16 @@ namespace MVVM
     private async void OnOpenHome(object obj)
     {
       await new Home_VM().ShowAsync();
+    }
+
+    private async void OnOpenChat(object obj)
+    {
+      await new Chat_VM(Author, obj.ToString()).ShowAsync();
+    }
+
+    private bool CanOpenChat(object obj)
+    {
+      return !Author.ToLower().Equals(obj.ToString().ToLower());
     }
 
     private void OnChange(object obj)
